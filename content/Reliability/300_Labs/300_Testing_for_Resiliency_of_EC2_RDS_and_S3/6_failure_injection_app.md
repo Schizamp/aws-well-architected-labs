@@ -138,4 +138,4 @@ In this section, you simulated an application level failure where the web server
 Our **hypothesis** is confirmed:
 > Hypothesis: If the server process on a single instance is killed, then availability will not be impacted
 
-{{< prev_next_button link_prev_url="../6_failure_injection_az" link_next_url="../8_failure_injection_optional/" />}}
+{{< prev_next_button link_prev_url="../5_failure_injection_rds" link_next_url="../7_failure_injection_az/" />}}

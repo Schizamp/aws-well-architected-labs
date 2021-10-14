@@ -67,7 +67,7 @@ Here you will build a state machine using AWS Step Functions and AWS Lambda that
 1. Ensure you have selected the **Ohio** region.  This region is also known as **us-east-2**, which you will see referenced throughout this lab.
 ![SelectOhio](/Reliability/300_Testing_for_Resiliency_of_EC2_RDS_and_S3/Images/SelectOhio.png)
 
-1. Go to the AWS CloudFormation console at <https://console.aws.amazon.com/cloudformation> and click “Create Stack:”
+1. Go to the AWS CloudFormation console at <https://console.aws.amazon.com/cloudformation> and click **Create Stack** and select **With new resources** from the drop-down menu
 ![Images/CreateStackButton](/Reliability/300_Testing_for_Resiliency_of_EC2_RDS_and_S3/Images/CreateStackButton.png)
 
 1. Leave "Prepare template" setting as-is
@@ -86,7 +86,7 @@ Here you will build a state machine using AWS Step Functions and AWS Lambda that
 
 1. Click the “Next” button.
       * On the "Configure stack options" page, click “Next” again
-      * On the "Review DeployResiliencyWorkshop" page, scroll to the bottom and tick the checkbox “I acknowledge that AWS CloudFormation might create IAM resources.”
+      * On the "Review DeployResiliencyWorkshop" page, scroll to the bottom and tick the checkbox “I acknowledge that AWS CloudFormation might create IAM resources with custome names.”
       * Click the “Create stack” button.
      ![CFNIamCapabilities](/Reliability/300_Testing_for_Resiliency_of_EC2_RDS_and_S3/Images/CFNIamCapabilities.png)
 

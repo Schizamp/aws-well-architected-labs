@@ -107,7 +107,7 @@ Load balancing ensures service requests are not routed to unhealthy resources, s
 
 #### 4.2.3 Auto scaling
 
-Autos scaling ensures we have the capacity necessary to meet customer demand. The auto scaling for this service is a simple configuration that ensures at least three EC2 instances are running. More complex configurations in response to CPU or network load are also possible using AWS.
+Auto scaling ensures we have the capacity necessary to meet customer demand. The auto scaling for this service is a simple configuration that ensures at least three EC2 instances are running. More complex configurations in response to CPU or network load are also possible using AWS.
 
 1. Go to the **Auto Scaling Groups** console you already have open (or [click here to open a new one](http://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-2#AutoScalingGroups:))
       * If there is more than one auto scaling group, select the one with the name that starts with **WebServersforResiliencyTesting**

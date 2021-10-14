@@ -5,4 +5,9 @@ hidden: true
 chapter: false
 weight: 99
 ---
+
+{{% notice warning %}}
 **[Go here for AZ failure injection](../7_failure_injection_az)**
+{{% /notice %}}
+
+{{< prev_next_button link_prev_url="../5_failure_injection_rds" link_next_url="../7_failure_injection_az/" />}}

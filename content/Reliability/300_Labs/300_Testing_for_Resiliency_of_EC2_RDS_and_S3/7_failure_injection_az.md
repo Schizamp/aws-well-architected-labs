@@ -55,13 +55,13 @@ Refresh the service website several times
 
 #### 6.2.2 Scenario 1 - Load balancer and web server tiers
 
-This scenario is similar to the EC2 failure injection test because there is only one EC2 server per AZ in our architecture. Look at the same screens you as for that test:
+This scenario is similar to the EC2 failure injection test because there is only one EC2 server per AZ in our architecture. Look at the same screens as you did before, for that test:
 
 * [EC2 Instances](http://console.aws.amazon.com/ec2/v2/home?region=us-east-2#Instances:)
 * Load Balancer [Target group](http://console.aws.amazon.com/ec2/v2/home?region=us-east-2#TargetGroups:)
 * [Auto Scaling Groups](http://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-2#AutoScalingGroups:)
 
-One difference from the EC2 failure test that you will observe is that auto scaling will bring up the replacement EC2 instance in an AZ that already has an EC2 instance as it attempts to balance the requested three EC2 instances across the remaining AZs.
+One difference from the EC2 failure test that you will observe is that auto scaling will not replace the EC2 instance in the same AZ as the one that was terminated. Auto scaling attempts to balance the requested three EC2 instances across the remaining two AZs.
 
 #### 6.2.3 Scenario 2 - Load balancer, web server, and data tiers
 
@@ -96,4 +96,4 @@ This step is optional. To simulate the AZ returning to health do the following:
 
 * Note how the auto scaling redistributes the EC2 servers across the availability zones
 
-{{< prev_next_button link_prev_url="../5_failure_injection_rds" link_next_url="../7_failure_injection_app/" />}}
+{{< prev_next_button link_prev_url="../6_failure_injection_app" link_next_url="../8_failure_injection_optional/" />}}

@@ -40,4 +40,4 @@ How would you diagnose if this is a larger problem than permissions?
 
 You can use drift detection in the CloudFormation console to see what had changed, or work on code to heal the failure modes.
 
-{{< prev_next_button link_prev_url="../7_failure_injection_app" link_next_url="../9_cleanup/" />}}
+{{< prev_next_button link_prev_url="../7_failure_injection_az" link_next_url="../9_cleanup/" />}}

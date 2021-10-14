@@ -24,8 +24,8 @@ In [Chaos Engineering](https://principlesofchaos.org/) we always start with a **
 1. Click on **click here to go to other page** and it will show the latest ten entries in the Amazon RDS DB
         ![DemoWebsiteClickHere](/Reliability/300_Testing_for_Resiliency_of_EC2_RDS_and_S3/Images/DemoWebsiteClickHere.png)
       1. The DB table shows "hits" on your _image web page_
-      1. Website URL access requests are shown here for traffic against the _image web page_. These include IPs of browser traffic as well as IPs of load balancer health checks
-      1. For each region the AWS Elastic Load Balancer makes these health checks, so you will see three IP addresses from these
+      1. These include requests you may make as well as load balancer health checks
+      1. Refresh and note that new data is constantly being written to the table
       1. Click on **click here to go to other page** again to return to the _image web page_
 
 1. Go to the RDS Dashboard in the AWS Console at <http://console.aws.amazon.com/rds>
@@ -108,7 +108,7 @@ Chaos Engineering uses the scientific method. We ran the experiment, and in the 
 
 In this section you reduce the unavailability time from four minutes to _under one minute_.
 
-You observed before that failover of the RDS instance itself takes under one minute. However the servers you are running are configured such that they cannot recognize that the IP address for the RDS instance DNS name has changed from the primary to the standby. Availability is only regained once the servers fail to reach the primary, are marked unhealthy, and then are replaced. This accounts for the four minute delay.  **In this part of the lab you will update the server code to be more resilient to RDS failover. The new code can recognize underlying changes in IP address for the RDS instance DNS name**
+You observed before that failover of the RDS instance itself takes under one minute. However the servers you are running are configured such that they cannot recognize that the IP address for the RDS instance DNS name has changed from the primary to the standby. Availability is only regained once the servers fail to reach the primary, are marked unhealthy, and then are replaced. This accounts for the four minute delay.  **In this part of the lab you will update the server code to be more resilient to RDS failover. The new code will re-establish the connection to the database, and therefore uses the new DNS record to connect to the RDS instance.**
 
 Use _either_ the **Express Steps** or **Detailed Steps** below:
 
@@ -143,7 +143,7 @@ When you see **UPDATE_COMPLETE_CLEANUP_IN_PROGRESS** you may continue. There is 
 
 
 Now you will re-run the experiment as per the steps below:
-* Before we used a customer script. For this run of the experiment, we will show how to use AWS Fault Injection Simulator (FIS)
+* Before we used a custom script. For this run of the experiment, we will show how to use AWS Fault Injection Simulator (FIS)
 
 ### 5.4 RDS failure injection using AWS Fault Injection Simulator (FIS) {#rdsfailureinjectionfis}
 
@@ -251,4 +251,4 @@ After making the necessary _improvements_, now our **hypothesis** is confirmed:
 > * The operating system of the DB instance is undergoing software patching
 > * A manual failover of the DB instance was initiated using Reboot with failover
 
-{{< prev_next_button link_prev_url="../4_failure_injection_ec2" link_next_url="../6_failure_injection_az/" />}}
+{{< prev_next_button link_prev_url="../4_failure_injection_ec2" link_next_url="../6_failure_injection_app/" />}}
